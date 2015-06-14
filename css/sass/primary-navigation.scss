@@ -1,0 +1,110 @@
+/*
+	This one is incharge of primary navigation,
+	based on https://css-tricks.com/the-checkbox-hack
+*/
+
+@import 'colors';
+
+.primary-tabs-container {
+	margin: 0 auto;
+	padding: 8px 20px;
+	position: relative;
+}
+
+.logo {
+	text-decoration: none;
+	color: $p-color;
+	font-size: 30px;
+	line-height: 40px;
+}
+
+/*https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/*/
+.truncate {
+	width: 120px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.primary-menu {
+	display: inline-block;
+
+	ul {
+		float: right;
+
+		li {
+			text-align: center;
+			line-height: 40px;
+			margin-left: 70px;
+			list-style: none;
+			float: left;
+
+			a {
+				cursor: pointer;
+				display: block;
+				outline: none;
+				width: 100%;
+				text-decoration: none;
+				color: $p-color;
+			}
+		}
+
+		li:hover {
+			cursor: pointer;
+			position: relative;
+
+			a {
+				color: $link-color;
+			}
+		}
+	}
+}
+
+.primary-checkbox, .primary-label {
+	display: none;
+}
+
+@media screen and (max-width: 850px) {
+
+	.truncate {
+		width: 400px;
+	}
+
+	.primary-menu {
+
+		ul {
+			display: none;
+
+			li {
+				display: block;
+				float: none;
+				width: 100%;
+				text-align: left;
+				background: $bg;
+				text-indent: 20px;
+				margin-left: 0px;
+			}
+		}
+
+		label {
+			position: absolute;
+			top: 8px;
+			right: 20px;
+			z-index: 1;
+			display: block;
+			text-align: center;
+			color: #39b54a;
+			cursor: pointer;
+			content:'';
+		}
+	}
+
+	.primary-checkbox:checked ~ ul {
+		display: block;
+		z-index: 10;
+		position: absolute;
+		right: 20px;
+		left: 20px;
+		top: 60px;
+	}
+}

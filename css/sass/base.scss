@@ -1,0 +1,42 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300");
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
+$ff: 'Open Sans', sans-serif;
+
+@import '_reset';
+@import '_colors';
+
+html, body {
+  height: 100%;
+}
+
+body {
+	font-family: $ff;
+}
+
+header {
+	background: $bg;
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	z-index: 20;
+}
+
+footer {
+	background: $bg;
+
+	p {
+		color: $p-color;
+		text-align: center;
+		padding: 20px;
+	}
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+}
+
+img {
+	width: 100%;
+}
